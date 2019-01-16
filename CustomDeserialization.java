@@ -21,3 +21,5 @@ public class MultiplicationResultAttemptDeserializer extends JsonDeserializer<Mu
 }
 
 
+// extend this class as well. try this class
+// JsonObjectDeserializer
