@@ -144,7 +144,7 @@ public class UserServiceImpl implements IUserService{
 }
 
 // authenticate user programmatically
-
+// here our model class, AutoUSer must implements UserDetails interface. 
 
 @RequestMapping(value= {"/register"}, method=RequestMethod.POST)
 	public String register(@ModelAttribute AutoUser user){
