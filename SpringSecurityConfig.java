@@ -142,3 +142,19 @@ public class UserServiceImpl implements IUserService{
 	}
 
 }
+
+// authenticate user programmatically
+
+
+@RequestMapping(value= {"/register"}, method=RequestMethod.POST)
+	public String register(@ModelAttribute AutoUser user){
+		
+		user.setRole("ROLE_USER");
+		repo.save(user);
+		
+		Authentication auth = new UsernamePasswordAuthenticationToken(user, user.getPassword()
+				,user.getAuthorities());
+		SecurityContextHolder.getContext().setAuthentication(auth);
+		
+		return "redirect:/";
+	}
