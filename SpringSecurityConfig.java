@@ -10,9 +10,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+// make bean of passwordencoder in configuration file.
+
+@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		return bCryptPasswordEncoder;
+	}
+
+--------------------------------------------------------------------
+
 // main configuration class
 
-@Configuration
+	@Configuration
 @EnableWebSecurity 
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
